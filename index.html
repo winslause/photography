@@ -533,7 +533,7 @@
 <section id="gallery" class="gallery-section" style="padding-top: 110px;">
     <div class="container">
         <h2 class="text-center mb-5" style="color: deepskyblue;"><b>Gallery</b></h2>
-        <div class="row" id="gallery-row">
+        <div class="row" id="gallery-row" style="overflow: visible;">
             <!-- Image containers will be dynamically updated by JavaScript -->
             <div class="col-4 mb-4 gallery-item">
                 <img src="p10.jpg" class="img-fluid gallery-img" alt="Gallery Image 1">
@@ -562,6 +562,56 @@
         </div>
     </div>
 </section>
+
+<!-- CSS for hover and click effects -->
+<style>
+    .gallery-row {
+        overflow: visible; /* Allow images to overflow their container */
+    }
+
+    .gallery-item {
+        position: relative;
+    }
+
+    .gallery-img {
+        transition: transform 0.3s ease-in-out, z-index 0s ease 0.3s; /* Ensure smooth transition and control z-index timing */
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .gallery-img:hover {
+        transform: scale(2); /* Increase the size of the image on hover */
+        z-index: 10; /* Bring the hovered image above others */
+        position: relative;
+    }
+
+    .gallery-img.clicked {
+        transform: scale(1); /* Display the image at its original size when clicked */
+        z-index: 20; /* Ensure the clicked image is above others */
+    }
+</style>
+
+<!-- JavaScript for click functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const galleryImages = document.querySelectorAll('.gallery-img');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                // Toggle the 'clicked' class on click to resize to original size
+                if (img.classList.contains('clicked')) {
+                    img.classList.remove('clicked');
+                    img.style.transform = 'scale(2)'; // Restore to hover size when clicked again
+                } else {
+                    img.classList.add('clicked');
+                    img.style.transform = 'scale(1)'; // Display the original size
+                }
+            });
+        });
+    });
+</script>
+
+
 
 
 <!-- Services Section -->
