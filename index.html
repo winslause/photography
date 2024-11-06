@@ -387,7 +387,6 @@
 
 
 
-
 /* Scoped loader container */
 .loader-container {
 	position: fixed;
@@ -402,49 +401,57 @@
 	z-index: 9999;
 }
 
-* {
+/* Reset styles only for the loader */
+.loader-container * {
 	border: 0;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
-:root {
+
+.loader-container :root {
 	--hue: 223;
 	--bg: hsl(var(--hue),90%,95%);
 	--fg: hsl(var(--hue),90%,5%);
 	--trans-dur: 0.3s;
 	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
 }
-body {
+
+.loader-container body {
 	background-color: var(--bg);
 	color: var(--fg);
 	font: 1em/1.5 sans-serif;
 	height: 100vh;
 	transition: background-color var(--trans-dur);
 }
-.ip {
+
+.loader-container .ip {
 	width: 16em;
 	height: 8em;
 }
-.ip__track {
+
+.loader-container .ip__track {
 	stroke: hsl(var(--hue),90%,90%);
 	transition: stroke var(--trans-dur);
 }
-.ip__worm1,
-.ip__worm2 {
+
+.loader-container .ip__worm1,
+.loader-container .ip__worm2 {
 	animation: worm1 2s linear infinite;
 }
-.ip__worm2 {
+
+.loader-container .ip__worm2 {
 	animation-name: worm2;
 }
 
-/* Dark theme */
+/* Dark theme for the loader */
 @media (prefers-color-scheme: dark) {
-	:root {
+	.loader-container :root {
 		--bg: hsl(var(--hue),90%,5%);
 		--fg: hsl(var(--hue),90%,95%);
 	}
-	.ip__track {
+
+	.loader-container .ip__track {
 		stroke: hsl(var(--hue),90%,15%);
 	}
 }
@@ -466,6 +473,7 @@ body {
 		stroke-dashoffset: 0;
 	}
 }
+
 @keyframes worm2 {
 	from {
 		stroke-dashoffset: 358;
@@ -477,7 +485,6 @@ body {
 		stroke-dashoffset: -358;
 	}
 }
-
 
     </style>
 </head>
