@@ -568,15 +568,10 @@
 
 <!-- Slideshow Section -->
 <section id="slideshow">
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="p7.jpg"  class="d-block w-100" alt="..." style="height: 80vh; object-fit: cover;">
+        <img src="p7.jpg" class="d-block w-100" alt="..." style="height: 80vh; object-fit: cover;">
         <div class="carousel-caption text-center">
           <h5 class="fs-5 fs-md-4 fs-lg-3" style="margin: 10px;">Capture Every Moment</h5>
           <h1 class="fs-1" style="font-size: 70px; margin: 10px;">Preserving Memories</h1>
@@ -585,7 +580,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="p14.jpg"  class="d-block w-100" alt="..." style="height: 80vh; object-fit: cover;">
+        <img src="p14.jpg" class="d-block w-100" alt="..." style="height: 80vh; object-fit: cover;">
         <div class="carousel-caption text-center">
           <h5 class="fs-5 fs-md-4 fs-lg-3" style="margin: 10px;">Your Story in Focus</h5>
           <h1 class="fs-1" style="font-size: 70px; margin: 10px;">Timeless Photography</h1>
@@ -593,7 +588,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="stud.jpg"  class="d-block w-100" alt="..." style="height: 80vh; object-fit: cover;">
+        <img src="stud.jpg" class="d-block w-100" alt="..." style="height: 80vh; object-fit: cover;">
         <div class="carousel-caption text-center">
           <h5 class="fs-5 fs-md-4 fs-lg-3" style="margin: 10px;">Art in Every Frame</h5>
           <h1 class="fs-1" style="font-size: 70px; margin: 10px;">Crafting Visual Memories</h1>
@@ -614,6 +609,56 @@
   </div>
 </section>
 
+<!-- Custom CSS for Continuous Slide Effect -->
+<style>
+  .carousel-inner {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  .carousel-item {
+    flex: 0 0 100%;
+    transition: transform 1s ease-in-out;
+  }
+
+  .carousel-item-next, .carousel-item-prev, .carousel-item.active {
+    transform: translateX(100%);
+  }
+
+  .carousel-item-next, .carousel-item-prev {
+    transform: translateX(-100%);
+  }
+
+  .carousel-inner {
+    display: flex;
+    animation: slide 9s infinite;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(-200%);
+    }
+    75% {
+      transform: translateX(-300%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  /* Optional: Style the controls */
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #000; /* Customize control button color */
+  }
+</style>
 
 
 
