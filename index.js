@@ -48,14 +48,14 @@
             { src: 'p23.jpg', alt: '' }
 
         ],
-        [
-            { src: 'p7.jpg', alt: '' },
-            { src: 'p8.jpg', alt: '' },
-            { src: 'p9.jpg', alt: '' },
-            { src: 'p10.jpg', alt: '' },
-            { src: 'p19.jpg', alt: '' },
-            { src: 'p12.jpg', alt: '' }
-        ],
+        // [
+        //     { src: 'p7.jpg', alt: '' },
+        //     { src: 'p8.jpg', alt: '' },
+        //     { src: 'p9.jpg', alt: '' },
+        //     { src: 'p10.jpg', alt: '' },
+        //     { src: 'p19.jpg', alt: '' },
+        //     { src: 'p12.jpg', alt: '' }
+        // ],
      [
            { src: 'p13.jpg', alt: '' },
             { src: 'p14.jpg', alt: '' },
