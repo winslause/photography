@@ -488,7 +488,6 @@
 
 
 
-
 /* Ensure the video covers the entire section */
 #kwanza-show {
   height: 100vh;
@@ -496,26 +495,28 @@
 }
 
 #kwanza-show video {
-  object-fit: cover; /* Ensure video covers the section */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire section */
   z-index: 1;
 }
 
+/* Shading Overlay */
 #kwanza-show .overlay {
-  background-color: transparent; /* Initial state */
-  z-index: 2; /* Place the overlay above the video */
-  transition: background-color 0.5s ease-in-out;
-  background-color: rgba(0, 86, 179, 0.5); /* Shading on */
+  background-color: rgba(0, 86, 179, 0.5); /* Shading effect */
+  z-index: 2; /* Places the overlay above the video */
+  transition: background-color 0.5s ease-in-out; /* Optional for hover effect */
 }
-
-
 
 /* Ensure the content is above the video and overlay */
 #kwanza-show .container {
-  position: relative;
-  z-index: 3;
+  z-index: 3; /* Keeps the text above the overlay */
 }
 
-
+#kwanza-show h1,
+#kwanza-show p {
+  color: white;
+}
 
 
 /*<!-- CSS for hover and click effects -->*/
@@ -674,24 +675,7 @@
   </div>
 </section>
 
-<!-- Add JavaScript to control smooth sliding -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.querySelector('#carouselExampleIndicators');
 
-    // Listen to the 'slide.bs.carousel' event to ensure smooth transition between slides
-    carousel.addEventListener('slide.bs.carousel', function (event) {
-      // Programmatically controlling the sliding interval and behavior
-      const targetSlide = event.relatedTarget;
-      const activeSlide = carousel.querySelector('.carousel-item.active');
-
-      // Ensure the slides move like they are attached by synchronizing movement
-      if (activeSlide && targetSlide) {
-        targetSlide.style.transition = 'transform 0.6s ease-in-out';
-      }
-    });
-  });
-</script>
 
 
 
@@ -767,6 +751,25 @@
     </div>
 </section>
 
+
+<!-- Add JavaScript to control smooth sliding -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('#carouselExampleIndicators');
+
+    // Listen to the 'slide.bs.carousel' event to ensure smooth transition between slides
+    carousel.addEventListener('slide.bs.carousel', function (event) {
+      // Programmatically controlling the sliding interval and behavior
+      const targetSlide = event.relatedTarget;
+      const activeSlide = carousel.querySelector('.carousel-item.active');
+
+      // Ensure the slides move like they are attached by synchronizing movement
+      if (activeSlide && targetSlide) {
+        targetSlide.style.transition = 'transform 0.6s ease-in-out';
+      }
+    });
+  });
+</script>
 
 <!-- JavaScript for click functionality -->
 <script>
@@ -852,19 +855,22 @@
 
 
 <!-- Kwanza Show Section -->
-<section id="kwanza-show" class="position-relative overflow-hidden">
-  <video autoplay muted loop id="bg-video" class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+<section id="kwanza-show" class="position-relative d-flex align-items-center justify-content-center">
+  <video autoplay muted loop id="bg-video" class="w-100 h-100">
     <source src="vid.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <div class="overlay position-absolute w-100 h-100"></div>
-  <div class="container h-100 d-flex justify-content-center align-items-center">
-    <div class="text-center text-light">
+  <!-- Shading Overlay -->
+  <div class="overlay position-absolute top-0 start-0 w-100 h-100"></div>
+  <div class="container h-100 d-flex justify-content-center align-items-center position-absolute top-50 start-50 translate-middle text-center text-light">
+    <div>
       <h1 class="display-4 fw-bold">Kwanza Show</h1>
       <p class="lead">Experience the magic through the lens of Kwanza Images.</p>
     </div>
   </div>
 </section>
+
+
 
 
 
