@@ -486,6 +486,67 @@
 	}
 }
 
+
+
+
+/* Ensure the video covers the entire section */
+#kwanza-show {
+  height: 100vh;
+  position: relative;
+}
+
+#kwanza-show video {
+  object-fit: cover; /* Ensure video covers the section */
+  z-index: 1;
+}
+
+#kwanza-show .overlay {
+  background-color: transparent; /* Initial state */
+  z-index: 2; /* Place the overlay above the video */
+  transition: background-color 0.5s ease-in-out;
+  background-color: rgba(0, 86, 179, 0.5); /* Shading on */
+}
+
+
+
+/* Ensure the content is above the video and overlay */
+#kwanza-show .container {
+  position: relative;
+  z-index: 3;
+}
+
+
+
+
+/*<!-- CSS for hover and click effects -->*/
+
+    .gallery-row {
+        overflow: visible; /* Allow images to overflow their container */
+    }
+
+    .gallery-item {
+        position: relative;
+    }
+
+    .gallery-img {
+        transition: transform 0.3s ease-in-out, z-index 0s ease 0.3s; /* Ensure smooth transition and control z-index timing */
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .gallery-img:hover {
+        transform: scale(2); /* Increase the size of the image on hover */
+        z-index: 10; /* Bring the hovered image above others */
+        position: relative;
+    }
+
+    .gallery-img.clicked {
+        transform: scale(1); /* Display the image at its original size when clicked */
+        z-index: 20; /* Ensure the clicked image is above others */
+    }
+
+
+
     </style>
 </head>
 <body>
@@ -575,7 +636,7 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="p7.jpg" class="d-block w-100" alt="..." style="height: 80vh; object-fit: cover;">
+        <img src="p7.jpg" class="d-block w-100" alt="..." style="height: 90vh; object-fit: cover;">
         <div class="carousel-caption text-center">
           <h5 class="fs-5 fs-md-4 fs-lg-3" style="margin: 10px;">Capture Every Moment</h5>
           <h1 class="fs-1" style="font-size: 70px; margin: 10px;">Preserving Memories</h1>
@@ -584,7 +645,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="p14.jpg" class="d-block w-100" alt="..." style="height: 80vh; object-fit: cover;">
+        <img src="p14.jpg" loading="lazy" class="d-block w-100" alt="..." style="height: 90vh; object-fit: cover;">
         <div class="carousel-caption text-center">
           <h5 class="fs-5 fs-md-4 fs-lg-3" style="margin: 10px;">Your Story in Focus</h5>
           <h1 class="fs-1" style="font-size: 70px; margin: 10px;">Timeless Photography</h1>
@@ -592,7 +653,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="stud.jpg" class="d-block w-100" alt="..." style="height: 80vh; object-fit: cover;">
+        <img src="stud.jpg" class="d-block w-100" alt="..." style="height: 90vh; object-fit: cover;">
         <div class="carousel-caption text-center">
           <h5 class="fs-5 fs-md-4 fs-lg-3" style="margin: 10px;">Art in Every Frame</h5>
           <h1 class="fs-1" style="font-size: 70px; margin: 10px;">Crafting Visual Memories</h1>
@@ -687,33 +748,6 @@
     </div>
 </section>
 
-<!-- CSS for hover and click effects -->
-<style>
-    .gallery-row {
-        overflow: visible; /* Allow images to overflow their container */
-    }
-
-    .gallery-item {
-        position: relative;
-    }
-
-    .gallery-img {
-        transition: transform 0.3s ease-in-out, z-index 0s ease 0.3s; /* Ensure smooth transition and control z-index timing */
-        z-index: 1;
-        cursor: pointer;
-    }
-
-    .gallery-img:hover {
-        transform: scale(2); /* Increase the size of the image on hover */
-        z-index: 10; /* Bring the hovered image above others */
-        position: relative;
-    }
-
-    .gallery-img.clicked {
-        transform: scale(1); /* Display the image at its original size when clicked */
-        z-index: 20; /* Ensure the clicked image is above others */
-    }
-</style>
 
 <!-- JavaScript for click functionality -->
 <script>
@@ -793,6 +827,24 @@
         <p>To be Kenya's leading photography studio, known for our innovative approach, artistic excellence, and unparalleled client satisfaction. We aim to capture and preserve memories that tell your story with elegance and beauty.</p>
       </div>
     </div>
+</section>
+
+
+
+
+<!-- Kwanza Show Section -->
+<section id="kwanza-show" class="position-relative overflow-hidden">
+  <video autoplay muted loop id="bg-video" class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+    <source src="vid.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay position-absolute w-100 h-100"></div>
+  <div class="container h-100 d-flex justify-content-center align-items-center">
+    <div class="text-center text-light">
+      <h1 class="display-4 fw-bold">Kwanza Show</h1>
+      <p class="lead">Experience the magic through the lens of Kwanza Images.</p>
+    </div>
+  </div>
 </section>
 
 
@@ -907,7 +959,7 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 <head>
-<script src="jquery-3.7.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <!-- Script to collapse the navbar after a link is clicked -->
