@@ -40,7 +40,7 @@
         }
 
         .hero-section {
-            height: 130vh;
+            height: 170vh;
             background: url('p15.jpg') no-repeat center center;
             background-size: cover;
             display: flex;
