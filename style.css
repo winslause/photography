@@ -485,6 +485,14 @@
   /* color:royalblue; */
 }
 
+@media (max-width: 920px){
+    #kwanza-show {
+        height: 70vh;
+        position: relative;
+        /* color:royalblue; */
+    }
+}
+
 /* The iframe (YouTube video) should cover the entire section */
 #kwanza-show .video-wrapper {
   position: absolute;
