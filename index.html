@@ -44,9 +44,6 @@
 	</main>
 </div>
 
-    
-
-
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark" >
     <div class="container d-flex justify-content-between align-items-center">
@@ -135,18 +132,6 @@
   </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Hero Section -->
 <section class="hero-section" style="background-image: url('p15.jpg'); background-size: cover; background-position: center;">
     <div class="hero-overlay"></div>
@@ -173,8 +158,6 @@
         </div>
     </div>
 </section>
-
-
 
 
 <!-- Gallery Section -->
@@ -210,31 +193,6 @@
         </div>
     </div>
 </section>
-
-
-
-
-<!-- JavaScript for click functionality -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const galleryImages = document.querySelectorAll('.gallery-img');
-
-        galleryImages.forEach(img => {
-            img.addEventListener('click', () => {
-                // Toggle the 'clicked' class on click to resize to original size
-                if (img.classList.contains('clicked')) {
-                    img.classList.remove('clicked');
-                    img.style.transform = 'scale(2)'; // Restore to hover size when clicked again
-                } else {
-                    img.classList.add('clicked');
-                    img.style.transform = 'scale(1)'; // Display the original size
-                }
-            });
-        });
-    });
-</script>
-
-
 
 
 <!-- Services Section -->
@@ -276,7 +234,6 @@
     </div>
 </section>
 
-
 <!-- Mission, Vision Section -->
 <section class="container py-5 custom-layout" id="about-us">
     <div class="row justify-content-center">
@@ -294,13 +251,10 @@
     </div>
 </section>
 
-
-
-
 <!-- Kwanza Show Section -->
 <section id="kwanza-show" class="position-relative d-flex align-items-center justify-content-center">
   <video autoplay muted loop id="bg-video" class="w-100 h-100">
-    <source src="vid.mp4" loading="lazy" type="video/mp4">
+    <source src="vid.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <!-- Shading Overlay -->
@@ -312,13 +266,6 @@
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
 
 <!-- Testimonials Section -->
 <section id="testimonials" class="testimonials-section bg-dark text-light" style="padding-top: 110px;">
@@ -417,9 +364,8 @@
 </a>
 </a>
 
-            
         </div>
-        <p>&copy; 2024 Photography by Kwanza Images. @kwanzashow</p>
+        <p>&copy; 2024 Photography by Kwanza Images.</p>
     </div>
 </section>
 

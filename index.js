@@ -113,3 +113,25 @@
       }
     });
   });
+
+
+  
+// <!-- JavaScript for click functionality -->
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const galleryImages = document.querySelectorAll('.gallery-img');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                // Toggle the 'clicked' class on click to resize to original size
+                if (img.classList.contains('clicked')) {
+                    img.classList.remove('clicked');
+                    img.style.transform = 'scale(2)'; // Restore to hover size when clicked again
+                } else {
+                    img.classList.add('clicked');
+                    img.style.transform = 'scale(1)'; // Display the original size
+                }
+            });
+        });
+    });
+
