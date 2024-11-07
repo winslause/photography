@@ -235,7 +235,7 @@
 </section>
 
 <!-- Mission, Vision Section -->
-<section class="container py-5 custom-layout" id="about-us">
+<section class="container py-5 bg-dark text-light custom-layout" id="about-us" style="margin-top: 10px; width: 100%;">
     <div class="row justify-content-center">
       <!-- Content Section -->
       <div class="content col-lg-10 text-center">
@@ -253,19 +253,30 @@
 
 <!-- Kwanza Show Section -->
 <section id="kwanza-show" class="position-relative d-flex align-items-center justify-content-center">
-  <video autoplay muted loop id="bg-video" class="w-100 h-100">
-    <source src="vid.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+    <h1 class="display-4 fw-bold" style="color: #072D4B">Kwanza Show</h1>
+  <!-- YouTube Embed (iframe) -->
+  <div class="video-wrapper w-100 h-100 position-absolute top-0 start-0">
+    <iframe 
+      src="https://youtu.be/CPL4ybLzSA4" 
+      frameborder="0" 
+      class="w-100 h-100" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  
   <!-- Shading Overlay -->
   <div class="overlay position-absolute top-0 start-0 w-100 h-100"></div>
-  <div class="container h-100 d-flex justify-content-center align-items-center position-absolute top-50 start-50 translate-middle text-center text-light">
+  
+  <!-- Text content positioned at the top of the video -->
+  <div class="container position-absolute top-0 start-50 translate-middle-x text-center text-light p-3">
     <div>
-      <h1 class="display-4 fw-bold">Kwanza Show</h1>
-      <p class="lead">Experience the magic through the lens of Kwanza Shows.</p>
+      
+      <!-- <p class="lead" ;>Experience the magic through the lens of Kwanza Shows.</p> -->
     </div>
   </div>
 </section>
+
 
 <!-- Testimonials Section -->
 <section id="testimonials" class="testimonials-section bg-dark text-light" style="padding-top: 110px;">
