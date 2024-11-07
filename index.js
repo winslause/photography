@@ -40,29 +40,29 @@
     const imageSets = [
         [
             
-            { src: 'p3.jpg', alt: 'Image 3' },
-            { src: 'p4.jpg', alt: 'Image 4' },
-            { src: 'p5.jpg', alt: 'Image 5' },
-            { src: 'p6.jpg', alt: 'Image 6' },
-            { src: 'p19.jpg', alt: 'Image 1' },
-            { src: 'p23.jpg', alt: 'Image 2' }
+            { src: 'p3.jpg', alt: '' },
+            { src: 'p4.jpg', alt: '' },
+            { src: 'p5.jpg', alt: '' },
+            { src: 'p6.jpg', alt: '' },
+            { src: 'p19.jpg', alt: '' },
+            { src: 'p23.jpg', alt: '' }
 
         ],
         [
-            { src: 'p7.jpg', alt: 'Image 7' },
-            { src: 'p8.jpg', alt: 'Image 8' },
-            { src: 'p9.jpg', alt: 'Image 9' },
-            { src: 'p10.jpg', alt: 'Image 10' },
-            { src: 'p19.jpg', alt: 'Image 11' },
-            { src: 'p12.jpg', alt: 'Image 12' }
+            { src: 'p7.jpg', alt: '' },
+            { src: 'p8.jpg', alt: '' },
+            { src: 'p9.jpg', alt: '' },
+            { src: 'p10.jpg', alt: '' },
+            { src: 'p19.jpg', alt: '' },
+            { src: 'p12.jpg', alt: '' }
         ],
      [
-           { src: 'p13.jpg', alt: 'Image 13' },
-            { src: 'p14.jpg', alt: 'Image 14' },
-            { src: 'p15.jpg', alt: 'Image 15' },
-            { src: 'p16.jpg', alt: 'Image 16' },
-            { src: 'p17.jpg', alt: 'Image 17' },
-            { src: 'p18.jpg', alt: 'Image 18' }
+           { src: 'p13.jpg', alt: '' },
+            { src: 'p14.jpg', alt: '' },
+            { src: 'p15.jpg', alt: '' },
+            { src: 'p16.jpg', alt: '' },
+            { src: 'p17.jpg', alt: '' },
+            { src: 'p18.jpg', alt: '' }
         ] 
     ];
 
@@ -96,3 +96,20 @@
 
 
 
+// <!-- Add JavaScript to control smooth sliding -->
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('#carouselExampleIndicators');
+
+    // Listen to the 'slide.bs.carousel' event to ensure smooth transition between slides
+    carousel.addEventListener('slide.bs.carousel', function (event) {
+      // Programmatically controlling the sliding interval and behavior
+      const targetSlide = event.relatedTarget;
+      const activeSlide = carousel.querySelector('.carousel-item.active');
+
+      // Ensure the slides move like they are attached by synchronizing movement
+      if (activeSlide && targetSlide) {
+        targetSlide.style.transition = 'transform 0.6s ease-in-out';
+      }
+    });
+  });

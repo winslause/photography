@@ -212,24 +212,7 @@
 </section>
 
 
-<!-- Add JavaScript to control smooth sliding -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.querySelector('#carouselExampleIndicators');
 
-    // Listen to the 'slide.bs.carousel' event to ensure smooth transition between slides
-    carousel.addEventListener('slide.bs.carousel', function (event) {
-      // Programmatically controlling the sliding interval and behavior
-      const targetSlide = event.relatedTarget;
-      const activeSlide = carousel.querySelector('.carousel-item.active');
-
-      // Ensure the slides move like they are attached by synchronizing movement
-      if (activeSlide && targetSlide) {
-        targetSlide.style.transition = 'transform 0.6s ease-in-out';
-      }
-    });
-  });
-</script>
 
 <!-- JavaScript for click functionality -->
 <script>
