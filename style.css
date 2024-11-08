@@ -261,41 +261,65 @@
 
 /* Default layout for larger screens */
 .team-section {
-    padding: auto;
+    padding: auto !important;
 }
 
 .team-section .team-img {
-    width: 200px; /* Adjust size for team images */
-    height: 200px;
-    margin-bottom: 15px; /* Space between image and text */
-    border-radius: 50%; /* Make the image circular */
+    width: 300px !important; /* Adjust size for team images */
+    height: 300px !important;
+    object-fit: cover !important; /* Ensure uniform size without distortion */
+    margin-bottom: 10px !important; /* Space between image and text */
+    /* border-radius: 50%;  Uncomment if you want circular images */
 }
+
 
 /* Center text in team section */
 .team-section h4, .team-section p {
-    margin: 0;
-    padding-top: 10px;
+    margin: 0 !important;
+    padding-top: 10px !important;
 }
 
 /* Flexbox for horizontal display on large screens */
 .team-section .row {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: flex !important;
+    justify-content: space-evenly !important; /* Reduce space between images */
+    align-items: center !important;
+    flex-wrap: nowrap !important; /* Prevent wrapping on large screens */
 }
 
-/* For screens with a maximum width of 920px */
+
+/* For smaller screens (below 920px), images will stack */
 @media (max-width: 920px) {
+    .team-section {
+        padding: 0 !important; /* Remove extra padding around the section */
+        margin: 0 !important;  /* Remove extra margins */
+    }
+
     .team-section .row {
-        /* flex-direction: column; Stack team members vertically */
+        flex-direction: column !important; /* Stack team members vertically */
+        align-items: center !important; /* Center team members */
+        margin: 0 !important; /* Remove any extra margins */
+        padding: 0 !important; /* Remove padding from the row */
+    }
+
+    .team-section .col-md-4 {
+        padding: 0 !important; /* Remove extra padding */
+        margin: 10px 0 !important; /* Ensure small margin between images */
+        width: 100% !important; /* Ensure the width takes up full space */
+        display: flex;
+        justify-content: center !important; /* Center images horizontally */
     }
 
     .team-section .team-img {
-        width: 200px; /* Adjust image size for smaller screens */
-        height: 200px;
-        border-radius: 50%; /* Make the image circular */
-    }
+    width: 300px !important; /* Larger image size for small screens */
+    height: auto !important; /* Let the height adjust based on the image's aspect ratio */
+    margin: 0 auto !important; /* Ensure the image is centered */
+    object-fit: contain !important; /* Ensure the full image is displayed without cropping */
 }
+
+
+}
+
 
 
 /* gallery section */
