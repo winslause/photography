@@ -79,7 +79,7 @@
             z-index: 2;
         }
 
-        .about-section,
+        /* .about-section, */
         .gallery-section,
         .services-section,
         .testimonials-section,
@@ -203,9 +203,16 @@
 
 /* Default layout for larger screens */
 .about-section .container {
-    padding: 50px 0; /* Adjust padding as needed */
+    padding: 10px 0; /* Adjust padding as needed */
+
 }
 
+
+#about #logo1 {
+    width:300px;
+    height:300px;
+    margin-top: 0;
+}
 .about-section .row {
     display: flex;
     justify-content: space-between;
@@ -213,20 +220,80 @@
 
 /* For screens with a maximum width of 920px */
 @media (max-width: 920px) {
-    .about-section .row {
-        flex-direction: column; /* Stack elements vertically */
-        text-align: center; /* Center text for a more balanced look */
+    .about-section {
+        display: flex; /* Enable flexbox */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        text-align: center; /* Ensure any text is centered */
     }
 
     .about-section .col-md-6 {
-        margin-bottom: 20px; /* Add spacing between the sections */
-        width: 100%;
+        margin-bottom: 20px; /* Add spacing between sections */
+        width: 100%; /* Make columns full width */
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        text-align: center; /* Center text */
     }
 
     .about-section img {
-        width: 80%; /* Adjust image size to fit smaller screens */
-        height: auto; /* Maintain aspect ratio */
-        margin: 0 auto; /* Center the image */
+        width: 100px; /* Adjust image size */
+        height: 100px; /* Maintain aspect ratio */
+        margin: 0; /* Remove margins that might affect centering */
+    }
+
+    #about {
+        display: flex; /* Enable flexbox */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        text-align: center; /* Ensure text is centered */
+    }
+
+    #about #logo1 {
+        width: 100px; /* Adjust image size */
+        height: 100px; /* Maintain aspect ratio */
+        margin: 0; /* Remove any unnecessary margins */
+    }
+}
+
+/* Default layout for larger screens */
+.team-section {
+    padding: auto;
+}
+
+.team-section .team-img {
+    width: 200px; /* Adjust size for team images */
+    height: 200px;
+    margin-bottom: 15px; /* Space between image and text */
+    border-radius: 50%; /* Make the image circular */
+}
+
+/* Center text in team section */
+.team-section h4, .team-section p {
+    margin: 0;
+    padding-top: 10px;
+}
+
+/* Flexbox for horizontal display on large screens */
+.team-section .row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* For screens with a maximum width of 920px */
+@media (max-width: 920px) {
+    .team-section .row {
+        /* flex-direction: column; Stack team members vertically */
+    }
+
+    .team-section .team-img {
+        width: 200px; /* Adjust image size for smaller screens */
+        height: 200px;
+        border-radius: 50%; /* Make the image circular */
     }
 }
 
