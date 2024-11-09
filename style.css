@@ -266,10 +266,9 @@
 
 .team-section .team-img {
     width: 300px !important; /* Adjust size for team images */
-    height: 300px !important;
-    object-fit: cover !important; /* Ensure uniform size without distortion */
-    margin-bottom: 10px !important; /* Space between image and text */
-    /* border-radius: 50%;  Uncomment if you want circular images */
+    height: auto !important; /* Let the height adjust based on the image's aspect ratio */
+    margin: 0 auto !important; /* Ensure the image is centered */
+    object-fit: contain !important; /* Ensure the full image is displayed without cropping */
 }
 
 
